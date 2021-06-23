@@ -11,7 +11,9 @@ const app = new Vue({
             'Fare il doumentario sull\'Italia, e sulla sua situazione politica',
             'Girare un film su un pasticcere Trotzkista'
         ],
-        input:''
+        input:'',
+        pref:''
+        
     },
     methods:{
         getInput(){
@@ -22,6 +24,12 @@ const app = new Vue({
         },
         remove(indice){
             this.list.splice(indice, 1,);
+        },
+        fixTop(indice){
+            let fixed = this.list[indice];
+            this.list.splice(indice, 1,);
+            this.list.unshift(fixed);
+            this.pref = indice;
         }
     }
 

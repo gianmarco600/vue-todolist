@@ -24,6 +24,7 @@
                 <li class="clearfix" v-for="(item, index) in list">
                     {{item}} 
                     <i class="fas fa-times" @click="remove(index)"></i>
+                    <i class="far fa-star" @click="fixTop(index)"></i>
                 </li>
             </ul>
             <h2 v-else>Domani non hai nulla da fare</h2>
