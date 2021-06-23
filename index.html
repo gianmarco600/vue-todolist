@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> 
+    <title>To do list</title>
+</head>
+<body>
+    <div class="container" id="app">
+        <h1>To do list</h1>
+        <div class="box">
+            <input type="text" @keyup.enter="getInput" v-model="input">
+            <button @click="getInput">AGGIUNGI</button>
+        </div>
+        <div class="box li">
+            <ul v-if="list != ''">
+                <li class="clearfix" v-for="(item, index) in list">
+                    {{item}} 
+                    <i class="fas fa-times" @click="remove(index)"></i>
+                </li>
+            </ul>
+            <h2 v-else>Domani non hai nulla da fare</h2>
+        </div>    
+    </div>
+
+
+    <script src="js/script.js"></script>
+</body>
+</html>
